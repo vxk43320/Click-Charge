@@ -1,0 +1,278 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage"%>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Click Charge</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Easy Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //Initialize tooltips
+            $('.nav-tabs > li a[title]').tooltip();
+
+            //Wizard
+            $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+                var $target = $(e.target);
+
+                if ($target.parent().hasClass('disabled')) {
+                    return false;
+                }
+            });
+
+            $(".next-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                $active.next().removeClass('disabled');
+                nextTab($active);
+
+            });
+            $(".prev-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                prevTab($active);
+
+            });
+        });
+
+        function nextTab(elem) {
+            $(elem).next().find('a[data-toggle="tab"]').click();
+        }
+        function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div class="banner">
+            <div class="header">
+                <div class="logo">
+                    <h1><a href="Default.aspx"><i>
+                        <img src="images/cell.png" alt=" " /></i>Click Charge</a></h1>
+                </div>
+                <div class="top-nav">
+                    <span class="menu">
+                        <img src="images/menu.png" alt=" " /></span>
+                    <ul class="nav1">
+                        <li><a href="Default.aspx">Home</a></li>
+                        <!--<li><a href="#" data-toggle="modal" data-target="#myModal2">datacard</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal1">DTH</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal3">landline</a></li>!-->
+                        <li><a href="#" data-toggle="modal" data-target="#myModal4">login</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal5">Signup</a></li>
+                    </ul>
+                    <!-- script-for-menu -->
+                    <script>
+                        $("span.menu").click(function () {
+                            $("ul.nav1").slideToggle(300, function () {
+                                // Animation complete.
+                            });
+                        });
+                    </script>
+                    <!-- /script-for-menu -->
+                </div>
+
+
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="container">
+                <div class="banner-info">
+                    <h3>Get Free Coupons and Discounts on Top Brands With Every Recharge</h3>
+                </div>
+                <div class="buttons">
+                    <ul>
+                        <li><a class="hvr-shutter-in-vertical" href="#">Mobile</a></li>
+                        <li><a class="hvr-shutter-in-vertical" href="#">Internet</a></li>
+                        <li><a class="hvr-shutter-in-vertical" href="#">Wallet</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="coupons">
+            <div class="container">
+                <div class="coupons-grids text-center">
+                    <div class="col-md-3 coupons-gd">
+                        <h3>RECHARGE IN <span>3 SIMPLE STEPS</span></h3>
+                    </div>
+                    <div class="col-md-3 coupons-gd">
+                        <h4><span>
+                            <img src="images/web.png" alt=" " /></span></h4>
+                        <p>LOGIN TO YOUR ACCOUNT</p>
+                    </div>
+                    <div class="col-md-3 coupons-gd">
+                        <h4><span>
+                            <img src="images/credit.png" alt=" " /></span></h4>
+                        <p>ENTER RECHARGE DETAILS</p>
+                    </div>
+                    <div class="col-md-3 coupons-gd">
+                        <h4><span>
+                            <img src="images/security.png" alt=" " /></span></h4>
+                        <p>MAKE PAYMENT</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content-bottom-two">
+            <div class="col-md-6 content-left text-center">
+                <img src="images/bbb5.png" alt="" />
+            </div>
+            <div class="col-md-6 content-right text-center">
+                <img src="images/bbb3.png" alt="" />
+            </div>
+            <div class="clearfix"></div>
+            <div class="btm-pos">
+                <h3>Exclusive Offers</h3>
+                <p>
+                    Browse for Offers which we can apply/use at stores to get discounts.
+                </p>
+            </div>
+        </div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="foo-grids">
+                    <div class="col-md-3 foo-grid">
+                        <h3>MOBILE RECHARGES</h3>
+                        <ul>
+                            <li><a href="#">Major Networks are included</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 foo-grid">
+                        <h3>INTERNET RECHARGES</h3>
+                        <ul>
+                            <li><a href="#">Major Networks are included</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 foo-grid">
+                        <h3>WALLET RECHARGES</h3>
+                        <ul>
+                            <li><a href="#">We can add money to our Wallet and transfer money from one wallet to another wallet</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 foo-grid">
+                        <h3>PAYMENT OPTIONS</h3>
+                        <ul>
+                            <li>Credit Cards</li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <h2><a href="index.html">Click Charge</a></h2>
+                <p>© 2017 Click Charge. All Rights Reserved</p>
+            </div>
+        </div>
+        <!-- mobile -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <section>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- login -->
+        <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content modal-info">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body modal-spa">
+                        <div class="login-grids">
+                            <div class="login">
+                                <div class="login-right">
+                                    <h3>Signin with your account </h3>
+                                     <asp:TextBox ID="txtUsername" runat="server" placeholder="Enter your mobile number"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="ReqtxtUsername" runat="server" ErrorMessage="*" ControlToValidate="txtUsername" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="ReqtxtPassword" runat="server" ErrorMessage="*" ControlToValidate="txtPassword" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <!--<h4><a href="#">Forgot password</a></h4>!-->
+                                    <div class="single-bottom">
+                                    </div>
+                                     <asp:Button ID="btnLogin" runat="server" Text="SIGNIN" OnClick="btnLogin_Click" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //login -->
+        <!-- signup -->
+        <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content modal-info">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body modal-spa">
+                        <div class="login-grids">
+                            <div class="login">
+
+                                <div class="login-right">
+
+                                    <h3>Create your account </h3>
+                                    <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="Green" Height="16px"
+                    Visible="False" Width="179px"></asp:Label>
+                                    <asp:TextBox ID="txtName" runat="server" placeholder="Name"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtName" ValidationGroup="Reg" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="txtMobileno" runat="server" placeholder="Mobile number"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="ReqtxtMobileno" runat="server" ErrorMessage="*" ControlToValidate="txtMobileno"  ValidationGroup="Reg" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="enter valid number" ControlToValidate="txtMobileno" ValidationExpression="\d{10}" ValidationGroup="Reg" Display="Dynamic"></asp:RegularExpressionValidator>
+                                    <asp:DropDownList ID="ddlNetwork" runat="server"></asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="ReqddlNetwork" runat="server" ErrorMessage="*" ControlToValidate="ddlNetwork" Display="Dynamic" ValidationGroup="Reg"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="txtEmailid" runat="server" placeholder="Email id"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="ReqtxtEmailid" runat="server" ErrorMessage="*" ControlToValidate="txtEmailid" ValidationGroup="Reg" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="format is wrong" ControlToValidate="txtEmailid" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="Reg" Display="Dynamic"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="txtregPassword" runat="server" TextMode="Password" placeholder="Password"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ControlToValidate="txtregPassword" ValidationGroup="Reg" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:Button ID="btnSubmit" runat="server" Text="CREATE ACCOUNT" OnClick="btnSubmit_Click" ValidationGroup="Reg"/>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //signup -->
+        <!-- for bootstrap working -->
+        <script src="js/bootstrap.js"></script>
+        <!-- //for bootstrap working -->
+    </form>
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="Admin_AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Click Charge</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Easy Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="../js/jquery.min.js" ></script>
+    <link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="../js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--//end-animate-->
+    <script>
+        $(document).ready(function () {
+            //Initialize tooltips
+            $('.nav-tabs > li a[title]').tooltip();
+
+            //Wizard
+            $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+                var $target = $(e.target);
+
+                if ($target.parent().hasClass('disabled')) {
+                    return false;
+                }
+            });
+
+            $(".next-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                $active.next().removeClass('disabled');
+                nextTab($active);
+
+            });
+            $(".prev-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                prevTab($active);
+
+            });
+        });
+
+        function nextTab(elem) {
+            $(elem).next().find('a[data-toggle="tab"]').click();
+        }
+        function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <div class="banner page-head">
+            <div class="header">
+                <div class="logo">
+                    <h1><a href="../Default.aspx"><i>
+                        <img src="../images/cell.png" alt=" " /></i>Click Charge</a></h1>
+                </div>
+                <div class="top-nav">
+                    <span class="menu">
+                        <img src="../images/menu.png" alt=" " /></span>
+                    <ul class="nav1">
+                        <li><a href="Inbox.aspx" >Inbox</a></li>
+                        <li><a href="RechargeType.aspx">Recharge Type</a></li>
+                        <li><a href="Networks.aspx" >Networks</a></li>
+                        <li><a href="Category.aspx" >Category</a></li>
+                        <li><a href="Offers.aspx" >Offers</a></li>
+                        <li><asp:LinkButton ID="lnklogout" runat="server" Text="Signout" OnClick="lnklogout_Click" CausesValidation="false"></asp:LinkButton></li>
+                    </ul>
+                    <!-- script-for-menu -->
+                    <script>
+                        $("span.menu").click(function () {
+                            $("ul.nav1").slideToggle(300, function () {
+                                // Animation complete.
+                            });
+                        });
+                    </script>
+                    <!-- /script-for-menu -->
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="container">
+                
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+
+        <div class="banner-bottom">
+            <div class="container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <h2><a href="index.html">Click Charge</a></h2>
+                <p>© 2017 Click Charge. All Rights Reserved</p>
+            </div>
+        </div>
+        <!-- for bootstrap working -->
+        <script src="js/bootstrap.js"></script>
+        <!-- //for bootstrap working -->
+
+    </form>
+</body>
+</html>
